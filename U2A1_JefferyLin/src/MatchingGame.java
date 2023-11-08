@@ -84,7 +84,7 @@ public class MatchingGame extends javax.swing.JFrame {
         mainTitle.setForeground(new java.awt.Color(255, 0, 0));
         mainTitle.setText("Matching Game");
         getContentPane().add(mainTitle);
-        mainTitle.setBounds(272, 6, 165, 29);
+        mainTitle.setBounds(400, 0, 165, 29);
 
         Card1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
