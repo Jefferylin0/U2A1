@@ -45,6 +45,7 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
         addButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         displayBox = new javax.swing.JTextArea();
+        totalPointsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +126,13 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
         displayBox.setRows(5);
         jScrollPane1.setViewportView(displayBox);
 
+        totalPointsButton.setText("Total Points");
+        totalPointsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalPointsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,10 +172,11 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
                                 .addComponent(testLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(weekBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(88, 88, 88)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(98, 98, 98)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(listButton)
                             .addComponent(addButton)
-                            .addComponent(listButton)))
+                            .addComponent(totalPointsButton)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(103, 103, 103)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -197,16 +206,18 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(testLabel3)
-                            .addComponent(weekBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(weekBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(testLabel4)
+                            .addComponent(weekBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(addButton)
                         .addGap(18, 18, 18)
-                        .addComponent(listButton)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(testLabel4)
-                    .addComponent(weekBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(listButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(totalPointsButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -280,7 +291,7 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
             isInt = true;
         }
         catch (NumberFormatException e){
-            displayBox.setText("You must enter a number for the points");
+            displayBox.setText("You must enter an integer for the points");
             isInt = false;
         }
         for (int i = 0; i<4; i++) {
@@ -321,6 +332,36 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
             displayBox.setText("Passenger already exists");
         }
     }//GEN-LAST:event_addButtonActionPerformed
+
+    private void totalPointsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalPointsButtonActionPerformed
+        // TODO add your handling code here:
+        displayBox.setText("");
+        String firstName, lastName;
+        int index = 0, total = 0, bonus = 0;
+        boolean inArray = false;
+        firstName = firstNameBox.getText();
+        lastName = lastNameBox.getText();
+        for (int i = 0; i<currentIndex; i++) {
+            if (theArray[i][0].equals(firstName)) {
+                if (theArray[i][1].equals(lastName)) {
+                    inArray = true;
+                    index = i;
+                }
+            }
+        }
+        if (inArray == true) {
+            for (int i=2; i<6; i++) {
+                total += Integer.parseInt(theArray[index][i]);
+            }
+            if (total > 5000) {
+                bonus = 1000;
+            }
+            displayBox.setText(firstName + "'s total points are: " + total + "\tBonus: " + bonus);
+        }
+        else {
+            displayBox.setText("Passenger is not in system");
+        }
+    }//GEN-LAST:event_totalPointsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,6 +412,7 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
     private javax.swing.JLabel testLabel3;
     private javax.swing.JLabel testLabel4;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JButton totalPointsButton;
     private javax.swing.JTextField weekBox1;
     private javax.swing.JTextField weekBox2;
     private javax.swing.JTextField weekBox3;
