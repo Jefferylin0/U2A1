@@ -365,7 +365,7 @@ public class AirlinePointsProgram extends javax.swing.JFrame {
             if (total > 5000) {
                 bonus = 1000;
             }
-            displayBox.setText(firstName + "'s total points are: " + total + "\tBonus: " + bonus);
+            displayBox.setText(firstName + "'s total points are: " + total + "    Bonus: " + bonus);
         }
         else {
             displayBox.setText("Passenger is not in system");
