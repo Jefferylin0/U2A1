@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Mr. Ho
+ * @author 342441086
  */
 public class MatchingGame extends javax.swing.JFrame {
     
