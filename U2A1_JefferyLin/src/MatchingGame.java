@@ -27,8 +27,8 @@ public class MatchingGame extends javax.swing.JFrame {
     ImageIcon back = new ImageIcon("cardback.jpg");
     ImageIcon done = new ImageIcon("done.jpg");
     int count, c1, c2, card1, card2;
-    int cardsLeft = 16;
-    int[] change = new int[16];
+    int cardsLeft = 24;
+    int[] change = new int[24];
 
     /**
      * Creates new form MatchingGame
@@ -66,7 +66,7 @@ public class MatchingGame extends javax.swing.JFrame {
         btnPlay = new javax.swing.JButton();
         btuGuessAgain = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
-        txtInstruction = new javax.swing.JTextField();
+        displayBox = new javax.swing.JTextField();
         Card17 = new javax.swing.JButton();
         Card18 = new javax.swing.JButton();
         Card19 = new javax.swing.JButton();
@@ -78,141 +78,107 @@ public class MatchingGame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Matching Game");
-        getContentPane().setLayout(null);
+        setResizable(false);
 
         mainTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         mainTitle.setForeground(new java.awt.Color(255, 0, 0));
         mainTitle.setText("Matching Game");
-        getContentPane().add(mainTitle);
-        mainTitle.setBounds(400, 0, 165, 29);
 
         Card1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card1);
-        Card1.setBounds(58, 35, 130, 115);
 
         Card2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card2);
-        Card2.setBounds(206, 35, 129, 115);
 
         Card3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card3ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card3);
-        Card3.setBounds(353, 35, 123, 115);
 
         Card4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card4ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card4);
-        Card4.setBounds(494, 36, 123, 117);
 
         Card5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card5ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card5);
-        Card5.setBounds(58, 171, 130, 116);
 
         Card6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card6ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card6);
-        Card6.setBounds(206, 171, 129, 116);
 
         Card7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card7ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card7);
-        Card7.setBounds(353, 171, 123, 116);
 
         Card8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card8ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card8);
-        Card8.setBounds(494, 171, 123, 116);
 
         Card9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card9ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card9);
-        Card9.setBounds(58, 305, 130, 119);
 
         Card10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card10ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card10);
-        Card10.setBounds(206, 305, 129, 119);
 
         Card11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card11ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card11);
-        Card11.setBounds(353, 305, 123, 119);
 
         Card12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card12ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card12);
-        Card12.setBounds(494, 305, 123, 119);
 
         Card13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card13ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card13);
-        Card13.setBounds(58, 442, 130, 123);
 
         Card14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card14ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card14);
-        Card14.setBounds(206, 442, 129, 123);
 
         Card15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card15ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card15);
-        Card15.setBounds(350, 440, 123, 123);
 
         Card16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card16ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card16);
-        Card16.setBounds(490, 440, 123, 123);
 
         btnPlay.setText("Play");
         btnPlay.addActionListener(new java.awt.event.ActionListener() {
@@ -220,8 +186,6 @@ public class MatchingGame extends javax.swing.JFrame {
                 btnPlayActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPlay);
-        btnPlay.setBounds(58, 583, 76, 27);
 
         btuGuessAgain.setText("Guess Again");
         btuGuessAgain.addActionListener(new java.awt.event.ActionListener() {
@@ -229,8 +193,6 @@ public class MatchingGame extends javax.swing.JFrame {
                 btuGuessAgainActionPerformed(evt);
             }
         });
-        getContentPane().add(btuGuessAgain);
-        btuGuessAgain.setBounds(169, 583, 99, 27);
 
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -238,76 +200,191 @@ public class MatchingGame extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit);
-        btnExit.setBounds(447, 583, 76, 27);
 
-        txtInstruction.setText("Click the Play button to start.  Make sure click Guess Again after each guess.");
-        getContentPane().add(txtInstruction);
-        txtInstruction.setBounds(58, 628, 586, 26);
+        displayBox.setEditable(false);
+        displayBox.setText("Click the Play button to start.  Make sure click Guess Again after each guess.");
 
         Card17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card17ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card17);
-        Card17.setBounds(630, 37, 123, 120);
 
         Card18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card18ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card18);
-        Card18.setBounds(630, 170, 123, 116);
 
         Card19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card19ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card19);
-        Card19.setBounds(630, 300, 123, 119);
 
         Card20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card20ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card20);
-        Card20.setBounds(630, 440, 123, 123);
 
         Card21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card21ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card21);
-        Card21.setBounds(770, 40, 123, 120);
 
         Card22.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card22ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card22);
-        Card22.setBounds(770, 170, 123, 116);
 
         Card23.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card23ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card23);
-        Card23.setBounds(770, 300, 123, 119);
 
         Card24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Card24ActionPerformed(evt);
             }
         });
-        getContentPane().add(Card24);
-        Card24.setBounds(770, 440, 123, 123);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(400, 400, 400)
+                        .addComponent(mainTitle))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(Card1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card4, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
+                        .addComponent(Card17, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(Card21, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(Card5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card6, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card7, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card8, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
+                        .addComponent(Card18, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(Card22, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(Card9, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card10, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card11, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card12, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
+                        .addComponent(Card19, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(Card23, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(Card13, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Card14, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(Card15, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(Card16, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(Card20, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(Card24, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(btnPlay)
+                        .addGap(35, 35, 35)
+                        .addComponent(btuGuessAgain)
+                        .addGap(179, 179, 179)
+                        .addComponent(btnExit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(displayBox, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(mainTitle)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Card1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Card2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Card3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(Card4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(Card17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(Card21, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Card18, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Card22, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Card5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Card6, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Card7, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Card8, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Card19, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Card23, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Card9, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Card10, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Card11, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Card12, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Card15, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Card16, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Card20, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Card24, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Card13, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Card14, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPlay)
+                    .addComponent(btuGuessAgain)
+                    .addComponent(btnExit))
+                .addGap(18, 18, 18)
+                .addComponent(displayBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1090,7 +1167,7 @@ public class MatchingGame extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnPlay;
     private javax.swing.JButton btuGuessAgain;
+    private javax.swing.JTextField displayBox;
     private javax.swing.JLabel mainTitle;
-    private javax.swing.JTextField txtInstruction;
     // End of variables declaration//GEN-END:variables
 }
