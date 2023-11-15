@@ -16,19 +16,19 @@ public class MatchingGame extends javax.swing.JFrame {
     
     ArrayList<String> cards = new ArrayList<String>();
     ArrayList<String> set = new ArrayList<String>();
-    ImageIcon a = new ImageIcon("ram.jpg");
-    ImageIcon b = new ImageIcon("case.jpg");
-    ImageIcon c = new ImageIcon("dvd.jpg");
-    ImageIcon d = new ImageIcon("harddrive.jpg");
-    ImageIcon e = new ImageIcon("keyboard.jpg");
-    ImageIcon f = new ImageIcon("mice.jpg");
+    ImageIcon a = new ImageIcon("mango.png");
+    ImageIcon b = new ImageIcon("strawberry.png");
+    ImageIcon c = new ImageIcon("grapes.png");
+    ImageIcon d = new ImageIcon("watermelon.png");
+    ImageIcon e = new ImageIcon("raspberry.png");
+    ImageIcon f = new ImageIcon("banana.png");
     ImageIcon g = new ImageIcon("monitor.jpg");
     ImageIcon h = new ImageIcon("printer.jpg");
     ImageIcon back = new ImageIcon("cardback.jpg");
     ImageIcon done = new ImageIcon("done.jpg");
     int count, c1, c2, card1, card2;
-    int cardsLeft = 24;
-    int[] change = new int[24];
+    int cardsLeft = 16;
+    int[] change = new int[16];
 
     /**
      * Creates new form MatchingGame
@@ -395,7 +395,7 @@ public class MatchingGame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
-        
+
         /** Set change array */
         for (int z = 0; z <= 15; z++) {
             change[z] = 1;
