@@ -421,12 +421,17 @@ public class MatchingGame extends javax.swing.JFrame {
             set.remove(set.get(index1));
         }
     }//GEN-LAST:event_btnPlayActionPerformed
-
+    
+    public static String calculations(String temp) {
+        String icon = "";
+        String[] icons = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"};
+        return icon;
+    }
     private void Card1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card1ActionPerformed
         // TODO add your handling code here:
         
         String temp = cards.get(0);
-        
+        System.out.println(temp);
         if (temp.equals("0")) {
             Card1.setIcon(a);
         } else if (temp.equals("1")) {
