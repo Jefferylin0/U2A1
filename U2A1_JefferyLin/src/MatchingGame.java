@@ -22,10 +22,14 @@ public class MatchingGame extends javax.swing.JFrame {
     ImageIcon d = new ImageIcon("watermelon.png");
     ImageIcon e = new ImageIcon("raspberry.png");
     ImageIcon f = new ImageIcon("banana.png");
-    ImageIcon g = new ImageIcon("monitor.jpg");
-    ImageIcon h = new ImageIcon("printer.jpg");
-    ImageIcon back = new ImageIcon("cardback.jpg");
-    ImageIcon done = new ImageIcon("done.jpg");
+    ImageIcon g = new ImageIcon("blueberry.png");
+    ImageIcon h = new ImageIcon("orange.png");
+    ImageIcon i = new ImageIcon("apple.png");
+    ImageIcon j = new ImageIcon("pear.png");
+    ImageIcon k = new ImageIcon("pineapple.png");
+    ImageIcon l = new ImageIcon("kiwi.png");
+    ImageIcon back = new ImageIcon("cardback.png");
+    ImageIcon done = new ImageIcon("done.png");
     int count, c1, c2, card1, card2;
     int cardsLeft = 16;
     int[] change = new int[16];
