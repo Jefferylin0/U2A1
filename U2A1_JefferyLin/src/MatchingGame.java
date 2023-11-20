@@ -30,6 +30,7 @@ public class MatchingGame extends javax.swing.JFrame {
     ImageIcon l = new ImageIcon("kiwi.png");
     ImageIcon back = new ImageIcon("cardback.png");
     ImageIcon done = new ImageIcon("done.png");
+    ImageIcon[] icons = {a, b, c, d, e, f, g, h, i, j, k, l};
     int count, c1, c2, card1, card2;
     int cardsLeft = 16;
     int[] change = new int[16];
@@ -422,34 +423,17 @@ public class MatchingGame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPlayActionPerformed
     
-    public static String calculations(String temp) {
-        String icon = "";
-        String[] icons = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"};
-        return icon;
+    public ImageIcon calculations(String temp) {
+        int index = 0;
+        index = Integer.parseInt(temp);
+        System.out.println(cardsLeft);
+        return icons[index];
     }
     private void Card1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card1ActionPerformed
         // TODO add your handling code here:
         
         String temp = cards.get(0);
-        System.out.println(temp);
-        if (temp.equals("0")) {
-            Card1.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card1.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card1.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card1.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card1.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card1.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card1.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card1.setIcon(h);
-        }
-        
+        Card1.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -465,25 +449,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
                 
         String temp = cards.get(1);
-        
-        if (temp.equals("0")) {
-            Card2.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card2.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card2.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card2.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card2.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card2.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card2.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card2.setIcon(h);
-        }
-        
+        Card2.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -498,25 +464,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(2);
-        
-        if (temp.equals("0")) {
-            Card3.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card3.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card3.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card3.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card3.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card3.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card3.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card3.setIcon(h);
-        }
-        
+        Card3.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -531,25 +479,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(4);
-        
-        if (temp.equals("0")) {
-            Card5.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card5.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card5.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card5.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card5.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card5.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card5.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card5.setIcon(h);
-        }
-        
+        Card5.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -565,25 +495,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(3);
-        
-        if (temp.equals("0")) {
-            Card4.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card4.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card4.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card4.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card4.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card4.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card4.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card4.setIcon(h);
-        }
-        
+        Card4.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -599,25 +511,7 @@ public class MatchingGame extends javax.swing.JFrame {
         
         
         String temp = cards.get(5);
-        
-        if (temp.equals("0")) {
-            Card6.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card6.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card6.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card6.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card6.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card6.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card6.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card6.setIcon(h);
-        }
-        
+        Card6.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -634,25 +528,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(6);
-        
-        if (temp.equals("0")) {
-            Card7.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card7.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card7.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card7.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card7.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card7.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card7.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card7.setIcon(h);
-        }
-        
+        Card7.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -669,25 +545,7 @@ public class MatchingGame extends javax.swing.JFrame {
         
         
         String temp = cards.get(7);
-        
-        if (temp.equals("0")) {
-            Card8.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card8.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card8.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card8.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card8.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card8.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card8.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card8.setIcon(h);
-        }
-        
+        Card8.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -703,25 +561,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(8);
-        
-        if (temp.equals("0")) {
-            Card9.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card9.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card9.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card9.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card9.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card9.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card9.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card9.setIcon(h);
-        }
-        
+        Card9.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -737,25 +577,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(9);
-        
-        if (temp.equals("0")) {
-            Card10.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card10.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card10.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card10.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card10.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card10.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card10.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card10.setIcon(h);
-        }
-        
+        Card10.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -770,25 +592,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(10);
-        
-        if (temp.equals("0")) {
-            Card11.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card11.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card11.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card11.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card11.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card11.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card11.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card11.setIcon(h);
-        }
-        
+        Card11.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -804,25 +608,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(11);
-        
-        if (temp.equals("0")) {
-            Card12.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card12.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card12.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card12.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card12.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card12.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card12.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card12.setIcon(h);
-        }
-        
+        Card12.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -837,25 +623,7 @@ public class MatchingGame extends javax.swing.JFrame {
     private void Card13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card13ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(12);
-        
-        if (temp.equals("0")) {
-            Card13.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card13.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card13.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card13.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card13.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card13.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card13.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card13.setIcon(h);
-        }
-        
+        Card13.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -870,25 +638,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(13);
-        
-        if (temp.equals("0")) {
-            Card14.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card14.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card14.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card14.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card14.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card14.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card14.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card14.setIcon(h);
-        }
-        
+        Card14.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -905,25 +655,7 @@ public class MatchingGame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String temp = cards.get(14);
-        
-        if (temp.equals("0")) {
-            Card15.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card15.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card15.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card15.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card15.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card15.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card15.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card15.setIcon(h);
-        }
-        
+        Card15.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -937,25 +669,7 @@ public class MatchingGame extends javax.swing.JFrame {
     private void Card16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card16ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(15);
-        
-        if (temp.equals("0")) {
-            Card16.setIcon(a);
-        } else if (temp.equals("1")) {
-            Card16.setIcon(b);
-        } else if (temp.equals("2")) {
-            Card16.setIcon(c);
-        } else if (temp.equals("3")) {
-            Card16.setIcon(d);
-        } else if (temp.equals("4")) {
-            Card16.setIcon(e);
-        } else if (temp.equals("5")) {
-            Card16.setIcon(f);
-        } else if (temp.equals("6")) {
-            Card16.setIcon(g);
-        } else if (temp.equals("7")) {
-            Card16.setIcon(h);
-        }
-        
+        Card16.setIcon(calculations(temp));
         count++;
         if (count == 1) {
             c1 = Integer.parseInt(temp);
@@ -966,13 +680,18 @@ public class MatchingGame extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_Card16ActionPerformed
-
+     
     private void btuGuessAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btuGuessAgainActionPerformed
         // TODO add your handling code here:
         
         count = 0;
         if (c1 == c2) {
             for (int y = 1; y <= 2; y++) {
+                for (int i = 0; i<16; i++) {
+                    if (change[i] == 0) {
+                        
+                    }
+                }
                 if (change[0] == 0) {
                     Card1.setIcon(done);
                     change[0] = 2;
@@ -1076,7 +795,31 @@ public class MatchingGame extends javax.swing.JFrame {
                 } else if (change[15] == 0) {
                     Card16.setIcon(back);
                     change[15] = 1;
-                }                                              
+                } else if (change[16] == 0) {
+                    Card17.setIcon(back);
+                    change[16] = 1;
+                } else if (change[17] == 0) {
+                    Card18.setIcon(back);
+                    change[17] = 1;
+                } else if (change[18] == 0) {
+                    Card19.setIcon(back);
+                    change[18] = 1;
+                } else if (change[19] == 0) {
+                    Card20.setIcon(back);
+                    change[19] = 1;
+                } else if (change[20] == 0) {
+                    Card21.setIcon(back);
+                    change[20] = 1;
+                } else if (change[21] == 0) {
+                    Card22.setIcon(back);
+                    change[21] = 1;
+                } else if (change[22] == 0) {
+                    Card23.setIcon(back);
+                    change[22] = 1;
+                } else if (change[23] == 0) {
+                    Card24.setIcon(back);
+                    change[23] = 1;
+                }                                             
             }
         }                        
     }//GEN-LAST:event_btuGuessAgainActionPerformed
