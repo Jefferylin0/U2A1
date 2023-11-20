@@ -30,7 +30,8 @@ public class MatchingGame extends javax.swing.JFrame {
     ImageIcon l = new ImageIcon("kiwi.png");
     ImageIcon back = new ImageIcon("cardback.png");
     ImageIcon done = new ImageIcon("done.png");
-    ImageIcon[] icons = {a, b, c, d, e, f, g, h, i, j, k, l}; 
+    ImageIcon[] icons = {a, b, c, d, e, f, g, h, i, j, k, l};
+    javax.swing.JButton[] buttons = new javax.swing.JButton[24];
     int count, c1, c2, card1, card2;
     int cardsLeft = 24;
     int[] change = new int[24];
@@ -40,6 +41,30 @@ public class MatchingGame extends javax.swing.JFrame {
      */
     public MatchingGame() {
         initComponents();
+        buttons[0] = Card1;
+        buttons[1] = Card2;
+        buttons[2] = Card3;
+        buttons[3] = Card4;
+        buttons[4] = Card5;
+        buttons[5] = Card6;
+        buttons[6] = Card7;
+        buttons[7] = Card8;
+        buttons[8] = Card9;
+        buttons[9] = Card10;
+        buttons[10] = Card11;
+        buttons[11] = Card12;
+        buttons[12] = Card13;
+        buttons[13] = Card14;
+        buttons[14] = Card15;
+        buttons[15] = Card16;
+        buttons[16] = Card17;
+        buttons[17] = Card18;
+        buttons[18] = Card19;
+        buttons[19] = Card20;
+        buttons[20] = Card21;
+        buttons[21] = Card22;
+        buttons[22] = Card23;
+        buttons[23] = Card24;
     }
 
     /**
