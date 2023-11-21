@@ -450,20 +450,18 @@ public class MatchingGame extends javax.swing.JFrame {
     
     public void calculations(String temp, int i) {
         int index = Integer.parseInt(temp);
-        if (!(change[index] == 0)) {
+        if (!(change[i] == 2)) {
             if (count < 2) {
-                if ((!(index == lastIndex) && count == 0) || (count < 2)) {
-                    count++;
-                    if (count == 1) {
-                        c1 = index;
-                        change[i] = 0;
-                    } else if (count == 2) {
-                        c2 = index;
-                        change[i] = 0;
-                    }
-                    buttons[i].setIcon(icons[index]);
-                    lastIndex = index;
+                count++;
+                if (count == 1) {
+                    c1 = index;
+                    change[i] = 0;
+                } else if (count == 2) {
+                    c2 = index;
+                    change[i] = 0;
                 }
+                buttons[i].setIcon(icons[index]);
+                lastIndex = index;
             }
         }
         System.out.println(count);
