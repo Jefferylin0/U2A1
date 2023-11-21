@@ -32,7 +32,7 @@ public class MatchingGame extends javax.swing.JFrame {
     ImageIcon done = new ImageIcon("done.png");
     ImageIcon[] icons = {a, b, c, d, e, f, g, h, i, j, k, l};
     javax.swing.JButton[] buttons = new javax.swing.JButton[24];
-    int count, c1, c2, card1, card2;
+    int count, c1, c2, lastIndex;
     int cardsLeft = 24;
     int[] change = new int[24];
 
@@ -448,259 +448,120 @@ public class MatchingGame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPlayActionPerformed
     
-    public ImageIcon calculations(String temp) {
-        int index = 0;
-        index = Integer.parseInt(temp);
-        System.out.println(cardsLeft);
-        return icons[index];
+    public void calculations(String temp, int i) {
+        int index = Integer.parseInt(temp);
+        if (!(change[index] == 0)) {
+            if (count < 2) {
+                if ((!(index == lastIndex) && count == 0) || (count < 2)) {
+                    count++;
+                    if (count == 1) {
+                        c1 = index;
+                        change[i] = 0;
+                    } else if (count == 2) {
+                        c2 = index;
+                        change[i] = 0;
+                    }
+                    buttons[i].setIcon(icons[index]);
+                    lastIndex = index;
+                }
+            }
+        }
+        System.out.println(count);
     }
     private void Card1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card1ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(0);
-        Card1.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[0] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[0] = 0;
-        }
-        
+        calculations(temp, 0);
     }//GEN-LAST:event_Card1ActionPerformed
 
     private void Card2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card2ActionPerformed
-        // TODO add your handling code here:
-                
+        // TODO add your handling code here:      
         String temp = cards.get(1);
-        Card2.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[1] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[1] = 0;
-        }
+        calculations(temp, 1);
     }//GEN-LAST:event_Card2ActionPerformed
 
     private void Card3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card3ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(2);
-        Card3.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[2] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[2] = 0;
-        }
+        calculations(temp, 2);
     }//GEN-LAST:event_Card3ActionPerformed
 
     private void Card5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card5ActionPerformed
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:       
         String temp = cards.get(4);
-        Card5.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[4] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[4] = 0;
-        }
-        
+        calculations(temp, 4);
     }//GEN-LAST:event_Card5ActionPerformed
 
     private void Card4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card4ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(3);
-        Card4.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[3] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[3] = 0;
-        }
+        calculations(temp, 3);
     }//GEN-LAST:event_Card4ActionPerformed
 
     private void Card6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card6ActionPerformed
         // TODO add your handling code here:
-        
-        
         String temp = cards.get(5);
-        Card6.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[5] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[5] = 0;
-        }
-        
-        
+        calculations(temp, 5);
     }//GEN-LAST:event_Card6ActionPerformed
 
     private void Card7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card7ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(6);
-        Card7.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[6] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[6] = 0;
-        }
-        
+        calculations(temp, 6); 
     }//GEN-LAST:event_Card7ActionPerformed
 
     private void Card8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card8ActionPerformed
         // TODO add your handling code here:
-        
-        
         String temp = cards.get(7);
-        Card8.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[7] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[7] = 0;
-        }
-        
+        calculations(temp, 7);  
     }//GEN-LAST:event_Card8ActionPerformed
 
     private void Card9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card9ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(8);
-        Card9.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[8] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[8] = 0;
-        }
-        
+        calculations(temp, 8);
     }//GEN-LAST:event_Card9ActionPerformed
 
     private void Card10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card10ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(9);
-        Card10.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[9] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[9] = 0;
-        }
+        calculations(temp, 9);
     }//GEN-LAST:event_Card10ActionPerformed
 
     private void Card11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card11ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(10);
-        Card11.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[10] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[10] = 0;
-        }
-        
+        calculations(temp, 10);
     }//GEN-LAST:event_Card11ActionPerformed
 
     private void Card12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card12ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(11);
-        Card12.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[11] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[11] = 0;
-        }
-        
+        calculations(temp, 11);
     }//GEN-LAST:event_Card12ActionPerformed
 
     private void Card13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card13ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(12);
-        Card13.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[12] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[12] = 0;
-        }
+        calculations(temp, 12);
     }//GEN-LAST:event_Card13ActionPerformed
 
     private void Card14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card14ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(13);
-        Card14.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[13] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[13] = 0;
-        }
+        calculations(temp, 13);
     }//GEN-LAST:event_Card14ActionPerformed
 
     private void Card15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card15ActionPerformed
         // TODO add your handling code here:
-        
         String temp = cards.get(14);
-        Card15.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[14] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[14] = 0;
-        }
+        calculations(temp, 14);
     }//GEN-LAST:event_Card15ActionPerformed
 
     private void Card16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card16ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(15);
-        Card16.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[15] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[15] = 0;
-        }
+        calculations(temp, 15);
     }//GEN-LAST:event_Card16ActionPerformed
      
     private void btuGuessAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btuGuessAgainActionPerformed
@@ -709,163 +570,22 @@ public class MatchingGame extends javax.swing.JFrame {
         count = 0;
         if (c1 == c2) {
             for (int y = 1; y <= 2; y++) {
-                for (int i = 0; i<16; i++) {
+                for (int i = 0; i<24; i++) {
                     if (change[i] == 0) {
-                        
+                        buttons[i].setIcon(done);
+                        change[i] = 2;
                     }
-                }
-                if (change[0] == 0) {
-                    Card1.setIcon(done);
-                    change[0] = 2;
-                } else if (change[1] == 0) {
-                    Card2.setIcon(done);
-                    change[1] = 2;
-                } else if (change[2] == 0) {
-                    Card3.setIcon(done);
-                    change[2] = 2;
-                } else if (change[3] == 0) {
-                    Card4.setIcon(done);
-                    change[3] = 2;
-                } else if (change[4] == 0) {
-                    Card5.setIcon(done);
-                    change[4] = 2;
-                } else if (change[5] == 0) {
-                    Card6.setIcon(done);
-                    change[5] = 2;
-                } else if (change[6] == 0) {
-                    Card7.setIcon(done);
-                    change[6] = 2;
-                } else if (change[7] == 0) {
-                    Card8.setIcon(done);
-                    change[7] = 2;
-                } else if (change[8] == 0) {
-                    Card9.setIcon(done);
-                    change[8] = 2;
-                } else if (change[9] == 0) {
-                    Card10.setIcon(done);
-                    change[9] = 2;
-                } else if (change[10] == 0) {
-                    Card11.setIcon(done);
-                    change[10] = 2;
-                } else if (change[11] == 0) {
-                    Card12.setIcon(done);
-                    change[11] = 2;
-                } else if (change[12] == 0) {
-                    Card13.setIcon(done);
-                    change[12] = 2;
-                } else if (change[13] == 0) {
-                    Card14.setIcon(done);
-                    change[13] = 2;
-                } else if (change[14] == 0) {
-                    Card15.setIcon(done);
-                    change[14] = 2;
-                } else if (change[15] == 0) {
-                    Card16.setIcon(done);
-                    change[15] = 2;
-                } else if (change[16] == 0) {
-                    Card17.setIcon(done);
-                    change[16] = 2;
-                } else if (change[17] == 0) {
-                    Card18.setIcon(done);
-                    change[17] = 2;
-                } else if (change[18] == 0) {
-                    Card19.setIcon(done);
-                    change[18] = 2;
-                } else if (change[19] == 0) {
-                    Card20.setIcon(done);
-                    change[19] = 2;
-                } else if (change[20] == 0) {
-                    Card21.setIcon(done);
-                    change[20] = 2;
-                } else if (change[21] == 0) {
-                    Card22.setIcon(done);
-                    change[21] = 2;
-                } else if (change[22] == 0) {
-                    Card23.setIcon(done);
-                    change[22] = 2;
-                } else if (change[23] == 0) {
-                    Card24.setIcon(done);
-                    change[23] = 2;
                 }
             }
         }
         else {
-
             for (int z = 1; z <= 2; z++) {
-
-                if (change[0] == 0) {
-                    Card1.setIcon(back);
-                    change[0] = 1;
-                } else if (change[1] == 0) {
-                    Card2.setIcon(back);
-                    change[1] = 1;
-                } else if (change[2] == 0) {
-                    Card3.setIcon(back);
-                    change[2] = 1;
-                } else if (change[3] == 0) {
-                    Card4.setIcon(back);
-                    change[3] = 1;
-                } else if (change[4] == 0) {
-                    Card5.setIcon(back);
-                    change[4] = 1;
-                } else if (change[5] == 0) {
-                    Card6.setIcon(back);
-                    change[5] = 1;
-                } else if (change[6] == 0) {
-                    Card7.setIcon(back);
-                    change[6] = 1;
-                } else if (change[7] == 0) {
-                    Card8.setIcon(back);
-                    change[7] = 1;
-                } else if (change[8] == 0) {
-                    Card9.setIcon(back);
-                    change[8] = 1;
-                } else if (change[9] == 0) {
-                    Card10.setIcon(back);
-                    change[9] = 1;
-                } else if (change[10] == 0) {
-                    Card11.setIcon(back);
-                    change[10] = 1;
-                } else if (change[11] == 0) {
-                    Card12.setIcon(back);
-                    change[11] = 1;
-                } else if (change[12] == 0) {
-                    Card13.setIcon(back);
-                    change[12] = 1;
-                } else if (change[13] == 0) {
-                    Card14.setIcon(back);
-                    change[13] = 1;
-                } else if (change[14] == 0) {
-                    Card15.setIcon(back);
-                    change[14] = 1;
-                } else if (change[15] == 0) {
-                    Card16.setIcon(back);
-                    change[15] = 1;
-                } else if (change[16] == 0) {
-                    Card17.setIcon(back);
-                    change[16] = 1;
-                } else if (change[17] == 0) {
-                    Card18.setIcon(back);
-                    change[17] = 1;
-                } else if (change[18] == 0) {
-                    Card19.setIcon(back);
-                    change[18] = 1;
-                } else if (change[19] == 0) {
-                    Card20.setIcon(back);
-                    change[19] = 1;
-                } else if (change[20] == 0) {
-                    Card21.setIcon(back);
-                    change[20] = 1;
-                } else if (change[21] == 0) {
-                    Card22.setIcon(back);
-                    change[21] = 1;
-                } else if (change[22] == 0) {
-                    Card23.setIcon(back);
-                    change[22] = 1;
-                } else if (change[23] == 0) {
-                    Card24.setIcon(back);
-                    change[23] = 1;
-                }                                             
+                for (int o = 0; o<24; o++) {
+                    if (change[o] == 0) {
+                        buttons[o].setIcon(back);
+                        change[o] = 1;
+                    }
+                }                    
             }
         }                        
     }//GEN-LAST:event_btuGuessAgainActionPerformed
@@ -873,113 +593,49 @@ public class MatchingGame extends javax.swing.JFrame {
     private void Card17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card17ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(16);
-        Card17.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[16] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[16] = 0;
-        }
+        calculations(temp, 16);
     }//GEN-LAST:event_Card17ActionPerformed
 
     private void Card18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card18ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(17);
-        Card18.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[17] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[17] = 0;
-        }
+        calculations(temp, 17);
     }//GEN-LAST:event_Card18ActionPerformed
 
     private void Card19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card19ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(18);
-        Card19.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[18] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[18] = 0;
-        }
+        calculations(temp, 18);
     }//GEN-LAST:event_Card19ActionPerformed
 
     private void Card20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card20ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(19);
-        Card20.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[19] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[19] = 0;
-        }
+        calculations(temp, 19);
     }//GEN-LAST:event_Card20ActionPerformed
 
     private void Card21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card21ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(20);
-        Card21.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[20] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[20] = 0;
-        }
+        calculations(temp, 20);
     }//GEN-LAST:event_Card21ActionPerformed
 
     private void Card22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card22ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(21);
-        Card22.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[21] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[21] = 0;
-        }
+        calculations(temp, 21);
     }//GEN-LAST:event_Card22ActionPerformed
 
     private void Card23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card23ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(22);
-        Card23.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[22] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[22] = 0;
-        }
+        calculations(temp, 22);
     }//GEN-LAST:event_Card23ActionPerformed
 
     private void Card24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card24ActionPerformed
         // TODO add your handling code here:
         String temp = cards.get(23);
-        Card24.setIcon(calculations(temp));
-        count++;
-        if (count == 1) {
-            c1 = Integer.parseInt(temp);
-            change[23] = 0;
-        } else if (count == 2) {
-            c2 = Integer.parseInt(temp);
-            change[23] = 0;
-        }
+        calculations(temp, 23);
     }//GEN-LAST:event_Card24ActionPerformed
 
     /**
