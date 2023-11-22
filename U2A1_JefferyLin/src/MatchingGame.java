@@ -32,10 +32,10 @@ public class MatchingGame extends javax.swing.JFrame {
     ImageIcon done = new ImageIcon("done.png");
     ImageIcon[] icons = {a, b, c, d, e, f, g, h, i, j, k, l};
     javax.swing.JButton[] buttons = new javax.swing.JButton[24];
-    int count, c1, c2, lastIndex;
+    int count, c1, c2, lastIndex = 100;
     int cardsLeft = 24;
     int[] change = new int[24];
-
+    boolean started = false;
     /**
      * Creates new form MatchingGame
      */
@@ -426,25 +426,35 @@ public class MatchingGame extends javax.swing.JFrame {
 
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
-        /** Set change array */
-        for (int z = 0; z <= 23; z++) {
-            change[z] = 1;
-        }
-        
-        /** Assign cards at random */
-        String temp;
-        for (int x = 0; x <= 11; x++) {
-            for (int y = 1; y <= 2; y++) {
-                temp = Integer.toString(x);
-                set.add(temp);
+        if (started == false) {
+            for (int i = 0; i < 24; i++) {
+                buttons[i].setIcon(back);
             }
+            started = true;
+            /** Set change array */
+            for (int z = 0; z <= 23; z++) {
+                change[z] = 1;
+            }
+
+            /** Assign cards at random */
+            String temp;
+            for (int x = 0; x <= 11; x++) {
+                for (int y = 1; y <= 2; y++) {
+                    temp = Integer.toString(x);
+                    set.add(temp);
+                }
+            }
+
+            for (int x=0; x <= 23; x++) {
+                double index = Math.floor(Math.random()*(24-x));
+                int index1 = (int)index;
+                cards.add(set.get(index1));
+                set.remove(set.get(index1));
+            }
+            System.out.println("DONE");
         }
-        
-        for (int x=0; x <= 23; x++) {
-            double index = Math.floor(Math.random()*(24-x));
-            int index1 = (int)index;
-            cards.add(set.get(index1));
-            set.remove(set.get(index1));
+        else {
+            displayBox.setText("Game has already started");
         }
     }//GEN-LAST:event_btnPlayActionPerformed
     
@@ -461,6 +471,7 @@ public class MatchingGame extends javax.swing.JFrame {
                     } else if (count == 2) {
                         c2 = index;
                         change[i] = 0;
+                        lastIndex = 100;
                     }
                     buttons[i].setIcon(icons[index]);
                 }
@@ -577,6 +588,7 @@ public class MatchingGame extends javax.swing.JFrame {
                     }
                 }
             }
+            cardsLeft -= 2;
         }
         else {
             for (int z = 1; z <= 2; z++) {
@@ -587,7 +599,11 @@ public class MatchingGame extends javax.swing.JFrame {
                     }
                 }                    
             }
-        }                        
+        }
+        if (cardsLeft == 0) {
+            displayBox.setText("Congratulations!!!     Click Play to play again");
+            started = false;
+        }
     }//GEN-LAST:event_btuGuessAgainActionPerformed
 
     private void Card17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Card17ActionPerformed
