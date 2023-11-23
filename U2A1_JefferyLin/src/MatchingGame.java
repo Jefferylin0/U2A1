@@ -423,7 +423,14 @@ public class MatchingGame extends javax.swing.JFrame {
         // Exit the application.
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
-
+    
+    public void delay(int num) {
+        try {
+            Thread.sleep(num);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
         if (started == false) {
@@ -453,6 +460,7 @@ public class MatchingGame extends javax.swing.JFrame {
             }
             cardsLeft = 24;
             System.out.println("DONE");
+            displayBox.setText("Game started");
         }
         else {
             displayBox.setText("Game has already started");
@@ -571,7 +579,7 @@ public class MatchingGame extends javax.swing.JFrame {
         String temp = cards.get(15);
         calculations(temp, 15);
     }//GEN-LAST:event_Card16ActionPerformed
-     
+    
     private void btuGuessAgainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btuGuessAgainActionPerformed
         // TODO add your handling code here:
         
