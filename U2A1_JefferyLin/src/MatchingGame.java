@@ -32,7 +32,7 @@ public class MatchingGame extends javax.swing.JFrame {
     ImageIcon done = new ImageIcon("done.png");
     ImageIcon[] icons = {a, b, c, d, e, f, g, h, i, j, k, l};
     javax.swing.JButton[] buttons = new javax.swing.JButton[24];
-    int count, c1, c2, lastIndex = 100;
+    int count, c1, c2;
     int cardsLeft = 24;
     int[] change = new int[24];
     boolean started = false;
@@ -451,6 +451,7 @@ public class MatchingGame extends javax.swing.JFrame {
                 cards.add(set.get(index1));
                 set.remove(set.get(index1));
             }
+            cardsLeft = 24;
             System.out.println("DONE");
         }
         else {
@@ -460,21 +461,17 @@ public class MatchingGame extends javax.swing.JFrame {
     
     public void calculations(String temp, int i) {
         int index = Integer.parseInt(temp);
-        if (!(change[i] == 2)) {
+        if (buttons[i].getIcon().equals(back)) {
             if (count < 2) {
-                if (!(lastIndex == i)) {
-                    count++;
-                    if (count == 1) {
-                        c1 = index;
-                        change[i] = 0;
-                        lastIndex = i;
-                    } else if (count == 2) {
-                        c2 = index;
-                        change[i] = 0;
-                        lastIndex = 100;
-                    }
-                    buttons[i].setIcon(icons[index]);
+                count++;
+                if (count == 1) {
+                    c1 = index;
+                    change[i] = 0;
+                } else if (count == 2) {
+                    c2 = index;
+                    change[i] = 0;
                 }
+                buttons[i].setIcon(icons[index]);
             }
         }
         System.out.println(count);
