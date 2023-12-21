@@ -36,6 +36,7 @@ public class MatchingGame extends javax.swing.JFrame {
     int cardsLeft = 24;
     int[] change = new int[24];
     boolean started = false;
+    boolean restar = false;
     /**
      * Creates new form MatchingGame
      */
@@ -434,6 +435,7 @@ public class MatchingGame extends javax.swing.JFrame {
     private void btnPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlayActionPerformed
 
         if (started == false) {
+            System.out.println("TE");
             for (int i = 0; i < 24; i++) {
                 buttons[i].setIcon(back);
             }
@@ -455,10 +457,14 @@ public class MatchingGame extends javax.swing.JFrame {
             for (int x=0; x <= 23; x++) {
                 double index = Math.floor(Math.random()*(24-x));
                 int index1 = (int)index;
+                if (restar == true) {
+                    cards.remove(set.get(index1));
+                }
                 cards.add(set.get(index1));
                 set.remove(set.get(index1));
             }
             cardsLeft = 24;
+            restar = false;
             System.out.println("DONE");
             displayBox.setText("Game started");
         }
@@ -608,6 +614,7 @@ public class MatchingGame extends javax.swing.JFrame {
         if (cardsLeft == 0) {
             displayBox.setText("Congratulations!!!     Click Play to play again");
             started = false;
+            restar = true;
         }
     }//GEN-LAST:event_btuGuessAgainActionPerformed
 
